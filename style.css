@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #d4fc79, #96e6a1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Heading */
+main h1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #2e2e2e;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Game Grid */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2vmin;
+  width: 60vmin;
+  height: 60vmin;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1.5rem;
+  padding: 1.5vmin;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+/* Each Box */
+.box {
+  width: 18vmin;
+  height: 18vmin;
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 10vmin;
+  color: #4b4453;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+.box:hover {
+  transform: scale(1.05);
+  background: #f9f9f9;
+}
+
+/* Buttons */
+#reset-btn,
+#new-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 0.6rem;
+  border: none;
+  background: #4b4453;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+#reset-btn:hover,
+#new-btn:hover {
+  background: #2c2b30;
+  transform: scale(1.05);
+}
+
+/* Winner Message Modal */
+.msg-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  text-align: center;
+  animation: fadeIn 0.5s ease forwards;
+}
+.msg-container.hide {
+  display: none;
+}
+#msg {
+  color: #008000;
+  font-size: 6vmin;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
